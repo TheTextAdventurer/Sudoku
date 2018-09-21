@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sudoku.Classes
+namespace Sudoku.Classes.Solvers
 {
     //http://www.sudoku129.com/puzzles/tips_1.php
     public class SolverNakedSingles : SolverBase

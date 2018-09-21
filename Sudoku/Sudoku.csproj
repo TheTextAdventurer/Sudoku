@@ -47,10 +47,10 @@
   <ItemGroup>
     <Compile Include="Classes\cell.cs" />
     <Compile Include="Classes\FormatReader.cs" />
-    <Compile Include="Classes\solvers\SolverHiddenSingles.cs" />
-    <Compile Include="Classes\solvers\SolverNakedSingles.cs" />
-    <Compile Include="Classes\solvers\SolverBase.cs" />
-    <Compile Include="Classes\solvers\SolverSubtraction.cs" />
+    <Compile Include="Classes\Solvers\SolverHiddenSingles.cs" />
+    <Compile Include="Classes\Solvers\SolverNakedSingles.cs" />
+    <Compile Include="Classes\Solvers\SolverBase.cs" />
+    <Compile Include="Classes\Solvers\SolverSubtraction.cs" />
     <Compile Include="Classes\FileTypes.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sudoku.Classes;
+using Sudoku.Classes.Solvers;
 
 namespace Sudoku
 {
@@ -24,6 +20,7 @@ namespace Sudoku
         {
             new SolverSubtraction()
             , new SolverNakedSingles()
+            , new SolverHiddenSingles()
         };
 
         private void Form1_Load(object sender, EventArgs e)
