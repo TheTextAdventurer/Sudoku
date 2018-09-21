@@ -11,38 +11,20 @@ namespace Sudoku.Classes
     {
         public SolverNakedSingles()
         {
-            Description = "Naked Singles";
+            Name = "Naked Singles";
+            Description = "A number can be assigned to a cell when it is the only possibility, given the row, the column and the block that contain the cell in question.";
         }
 
         public override bool Tick()
         {
             foreach (var cell in cells.Where(c => !c.Solved))
             {
-
                 Cell[] neigbours = null;
-
-                if ((neigbours = GetRowNeighbours(cell).Where(c => c.Solved).ToArray()).Count() == 8)
+                if ((neigbours = GetAllNeighbours(cell).Where(c => c.Solved).ToArray()).Count() == 8)
                 {
                     doOperation(neigbours, cell);
                     return true;
                 }
-                else if ((neigbours = GetColNeighbours(cell).Where(c => c.Solved).ToArray()).Count() == 8)
-                {
-                    doOperation(neigbours, cell);
-                    return true;
-                }
-                else if ((neigbours = GetBoxNeighbours(cell).Where(c => c.Solved).ToArray()).Count() == 8)
-                {
-                    doOperation(neigbours, cell);
-                    return true;
-                }
-                else if ((neigbours = GetAllNeighbours(cell).Where(c => c.Solved).ToArray()).Count() == 8)
-                {
-                    doOperation(neigbours, cell);
-                    return true;
-                }
-
-
             }
             return false;
         }
