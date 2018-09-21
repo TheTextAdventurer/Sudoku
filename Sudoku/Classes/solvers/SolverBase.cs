@@ -9,6 +9,7 @@ namespace Sudoku.Classes
     public abstract class SolverBase
     {
         protected List<Cell> cells;
+        public string Name { get; set; }
         public string Description { get; set; }
 
         protected static int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
