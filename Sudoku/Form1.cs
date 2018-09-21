@@ -51,7 +51,7 @@ namespace Sudoku
 
 
             foreach (var s in Solvers)
-                listBox1.Items.Add(s.Description);
+                listBox1.Items.Add(s.Name);
 
         }
 
@@ -144,6 +144,14 @@ namespace Sudoku
                     current.SetCell(p.Y, p.X, (int)char.GetNumericValue(e.KeyChar));
                 else
                     current.ResetCell(p.Y, p.X);
+            }
+        }
+
+        private void listBox1_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex > -1)
+            {
+                lbSolverDescription.Text = Solvers[listBox1.SelectedIndex].Description;
             }
         }
     }

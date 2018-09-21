@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Classes\cell.cs" />
     <Compile Include="Classes\FormatReader.cs" />
+    <Compile Include="Classes\solvers\SolverHiddenSingles.cs" />
     <Compile Include="Classes\solvers\SolverNakedSingles.cs" />
     <Compile Include="Classes\solvers\SolverBase.cs" />
     <Compile Include="Classes\solvers\SolverSubtraction.cs" />
