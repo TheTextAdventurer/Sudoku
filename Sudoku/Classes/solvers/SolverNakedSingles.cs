@@ -36,6 +36,11 @@ namespace Sudoku.Classes
                     doOperation(neigbours, cell);
                     return true;
                 }
+                else if ((neigbours = GetAllNeighbours(cell).Where(c => c.Solved).ToArray()).Count() == 8)
+                {
+                    doOperation(neigbours, cell);
+                    return true;
+                }
 
 
             }
