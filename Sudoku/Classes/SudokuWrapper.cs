@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -9,8 +10,10 @@ namespace Sudoku.Classes
     //http://www.sudocue.net/fileformats.php
     public class SudokuWrapper
     {
+        public string FileName { get { return Path.GetFileName(FullPath); ; } }
 
-        public string FileName { get; set; }
+        [Browsable(false)]
+        public string FullPath { get; set; }
 
         private int[] Nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
