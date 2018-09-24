@@ -8,7 +8,7 @@ namespace Sudoku.Classes.Solvers
         public SolverSubtraction()
         {
             Name = "Subtraction";
-            Description = "The value of solved cell can be removed as a potenital value of it's neighbours in the same row, column and box.";
+            Description = "The value of solved cell can be removed as a potential value from it's neighbours in the same row, column and box.";
         }
             
 
