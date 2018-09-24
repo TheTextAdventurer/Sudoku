@@ -29,22 +29,25 @@ namespace Sudoku
             this.KeyPreview = true;
 
 
+            //uncomment the code below to convert the project
+            //euler file p096_sudoku.txt into fifty separate .sdk 
+            //files
+            /*
+            string[] f = File.ReadAllLines("p096_sudoku.txt");
+            List<int[]> Puzzles = new List<int[]>();
+            int grid = 1;
+            for (int ctr = 0; ctr < f.Length; ctr += 10)
+            {
+                var p = f.Skip(ctr + 1)
+                                .Take(9)
+                                .Select(i => i.Replace('0', '.'))
+                                .ToArray();
+                File.WriteAllLines(String.Format("Grid {0}.sdk", grid++), p);
+
+            }
+            */
 
 
-            //string[] f = File.ReadAllLines("p096_sudoku.txt");
-            //List<int[]> Puzzles = new List<int[]>();
-            //int grid = 1;
-            //for (int ctr = 0; ctr < f.Length; ctr += 10)
-            //{
-            //    var p = f.Skip(ctr + 1)
-            //                    .Take(9)
-            //                    .Select(i => i.Replace('0','.'))
-            //                    .ToArray();
-            //    File.WriteAllLines(String.Format("Grid {0}.sdk", grid++), p );
-
-            //}
-
-            //current = new SudokuWrapper(Puzzles.First());
 
 
             foreach (var s in Solvers)
@@ -69,7 +72,7 @@ namespace Sudoku
                 current = new SudokuWrapper();
             }
 
-            
+
             propertyGrid1.SelectedObject = current;
             current.Changed += Current_Changed;
             sudokoGrid1.Reset();
@@ -105,8 +108,8 @@ namespace Sudoku
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    SetGrid(ofd.FileName, (FileTypes.FilterTypes)(ofd.FilterIndex - 1) );
-                    
+                    SetGrid(ofd.FileName, (FileTypes.FilterTypes)(ofd.FilterIndex - 1));
+
                 }
             }
         }
@@ -121,7 +124,7 @@ namespace Sudoku
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    File.WriteAllText(sfd.FileName, current.GetAsFormat((FileTypes.FilterTypes)(sfd.FilterIndex-1)));
+                    File.WriteAllText(sfd.FileName, current.GetAsFormat((FileTypes.FilterTypes)(sfd.FilterIndex - 1)));
                 }
 
             }
