@@ -65,7 +65,7 @@ namespace Sudoku
             if (pFile != null)
             {
                 current = new SudokuWrapper(FormatReader.Open(pFilt, pFile));
-                current.FileName = pFile;
+                current.FullPath = pFile;
             }
             else
             {
