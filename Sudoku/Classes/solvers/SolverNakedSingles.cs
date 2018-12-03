@@ -16,11 +16,28 @@ namespace Sudoku.Classes.Solvers
             foreach (var cell in cells.Where(c => !c.Solved))
             {
                 Cell[] neigbours = null;
-                if ((neigbours = GetAllNeighbours(cell).Where(c => c.Solved).ToArray()).Count() == 8)
+
+                if ((neigbours = GetRowNeighbours(cell).Where(c => c.Solved).ToArray()).Count() == 8)
                 {
                     doOperation(neigbours, cell);
                     return true;
                 }
+                else if ((neigbours = GetColNeighbours(cell).Where(c => c.Solved).ToArray()).Count() == 8)
+                {
+                    doOperation(neigbours, cell);
+                    return true;
+                }
+                else if ((neigbours = GetBoxNeighbours(cell).Where(c => c.Solved).ToArray()).Count() == 8)
+                {
+                    doOperation(neigbours, cell);
+                    return true;
+                }
+                else if ((neigbours = GetAllNeighbours(cell).Where(c => c.Solved).ToArray()).Count() == 8)
+                {
+                    doOperation(neigbours, cell);
+                    return true;
+                }
+
             }
             return false;
         }
